@@ -13,7 +13,7 @@ provider "aws" {
 
 locals {
   github-repo = "https://github.com/MiranaSGit/DevOps_Phonebook-Application.git"
-  github-file-url = "https://raw.githubusercontent.com/MiranaSGit/DevOps_Phonebook-Application/main/"
+  github-file-url = "https://raw.githubusercontent.com/MiranaSGit/DevOps_Phonebook-Application/master/"
 }
 
 data "aws_caller_identity" "current" {}
