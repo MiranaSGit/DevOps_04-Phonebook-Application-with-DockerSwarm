@@ -1,0 +1,26 @@
+INFRASTRUCTURE:
+- public github repo
+- docker swarm
+    - 3 manager
+    - 2 worker
+        - each of them must commminicate to each other.
+        - ec2 instance connect cli
+        - IAM policy
+    - Leader manager node can pull/push image from/to ECR.
+    - ECR policy for full-access
+    - Other managers and worker nodes can pull image from ECR.
+- AWS ECR to be created for image registry.
+- main.tf terraform file
+
+APPLICATION:
+- Dockerfile
+  - will be used for the app-server image
+  - reqired files:
+      - phonebook-app.py
+      - requirements.txt
+      - templates folder
+      
+- docker-compose.yaml
+  - services:
+      - app-server and my-sql
+      - app-server image will be pulled from ECR.
